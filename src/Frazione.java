@@ -99,8 +99,9 @@ public class Frazione {
 
     @Override
     public String toString() {
-        String s = n + "/" + d+" = "+(n/d);
-        return super.toString();
+        double ris=(double)n/d;
+        String s = n + "/" + d+" = "+ris;
+        return s;
     }
 
     public int getN() {
