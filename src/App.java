@@ -10,7 +10,7 @@ class Main {
     int n = sc.nextInt();
     System.out.println("inserire il denominatore");
     int d = sc.nextInt();
-    f.inserimento(n, d);
+    System.out.println(f.inserimento(n, d));
     System.out.println("La frazione è "+f.tipo());
     boolean controllo=true;
     while(controllo){

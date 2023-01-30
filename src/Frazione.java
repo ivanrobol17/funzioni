@@ -10,45 +10,29 @@ public class Frazione {
         String s = "";
         if (n == 0) {
             if (d == 0) {
-                s += "";
+                s += "NON CALCOLABILE";
             } else {
-                s += "";
+                s += "PARI A 0";
             }
         } else if (d == 0) {
-            s += "";
+            s += "I M P O S S I B I L E";
         } else {
+            if(d<0){
+                n*=-1;
+                d*=-1;
+            }
             this.n = n;
             this.d = d;
         }
         return s;
     }
 
-    public int getN() {
-        return n;
-    }
-
-    public void setN(int n) {
-        this.n = n;
-    }
-
-    public int getD() {
-        return d;
-    }
-
-    public void setD(int d) {
-        this.d = d;
-    }
-
-    public int mcd(int a, int b) {
+    private int mcd(int a, int b) {
         if (b == 0) {
             return a;
         } else {
             return mcd(b, a % b);
         }
-    }
-
-    public int mcm(int a, int b) {
-        return (a * b) / mcd(a, b);
     }
 
     public String tipo() {
@@ -63,33 +47,33 @@ public class Frazione {
         return s;
     }
 
-    public Frazione somma(int n, int d) {
-        int dCom = d*this.d;
-        int nfin = n*this.d+this.n*d;
+    public Frazione somma(Frazione f) {
+        int dCom = d*f.getD();
+        int nfin = n*f.getD()+f.getN()*d;
         Frazione ris = new Frazione();
         ris.inserimento(nfin, dCom);
         return ris;
     }
 
-    public Frazione sottrazione(int n, int d) {
-        int dCom = d*this.d;
-        int nfin = n*this.d-this.n*d;
+    public Frazione sottrazione(Frazione f) {
+        int dCom = d*f.getD();
+        int nfin = n*f.getD()-f.getN()*d;
         Frazione ris = new Frazione();
         ris.inserimento(nfin, dCom);
         return ris;
     }
 
-    public Frazione moltiplica(int n, int d) {
-        int nFin = n * this.n;
-        int dFin = d * this.d;
+    public Frazione moltiplica(Frazione f) {
+        int nFin = n * f.getN();
+        int dFin = d * f.getD();
         Frazione ris = new Frazione();
         ris.inserimento(nFin, dFin);
         return ris;
     }
 
-    public Frazione dividi(int n, int d) {
-        int nFin = d * this.n;
-        int dFin = n * this.d;
+    public Frazione dividi(Frazione f) {
+        int nFin = d * f.getN();
+        int dFin = n * f.getD();
         Frazione ris = new Frazione();
         ris.inserimento(nFin, dFin);
         return ris;
@@ -111,13 +95,20 @@ public class Frazione {
         int tmp=n;
         n=d;
         d=tmp;
-
     }
 
     @Override
     public String toString() {
-        String s = n + "/" + d;
+        String s = n + "/" + d+" = "+(n/d);
         return super.toString();
+    }
+
+    public int getN() {
+        return n;
+    }
+
+    public int getD() {
+        return d;
     }
 
 }
