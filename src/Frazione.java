@@ -23,6 +23,7 @@ public class Frazione {
             }
             this.n = n;
             this.d = d;
+            semplifica();
         }
         return s;
     }
@@ -37,7 +38,7 @@ public class Frazione {
 
     public String tipo() {
         String s = "";
-        if (n > d) {
+        if (n < d) {
             s += "propria";
         } else if (n % d == 0) {
             s += "apparente";
