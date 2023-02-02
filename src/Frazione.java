@@ -10,12 +10,12 @@ public class Frazione {
         String s = "";
         if (n == 0) {
             if (d == 0) {
-                s += "NON CALCOLABILE";
+                s += "LA FRAZIONE NON E' CALCOLABILE e per questo non verrà aggiunta nella memoria";
             } else {
-                s += "PARI A 0";
+                s += "LA FRAZIONE E' PARI A 0 e per questo non verrà aggiunta nella memoria";
             }
         } else if (d == 0) {
-            s += "I M P O S S I B I L E";
+            s += "LA FRAZIONE E' I M P O S S I B I L E e per questo non verrà aggiunta nella memoria";
         } else {
             if(d<0){
                 n*=-1;
@@ -23,6 +23,7 @@ public class Frazione {
             }
             this.n = n;
             this.d = d;
+            semplifica();
         }
         return s;
     }
@@ -99,8 +100,14 @@ public class Frazione {
 
     @Override
     public String toString() {
-        double ris=(double)n/d;
-        String s = n + "/" + d+" = "+ris;
+        double ris;
+        String s;
+        if(d!=1){
+            ris=(double)n/d;
+            s = n + "/" + d+" = "+ris;
+        }else{
+            s = n+"";
+        }
         return s;
     }
 
