@@ -22,6 +22,14 @@ public class Frazioni {
         }
         return s;
     }
+    public String addFrazione(String data){
+        Frazione tmp = new Frazione();
+        String s=tmp.inserimento(data);
+        if(s.length()==0){
+            f.add(tmp);
+        }
+        return s;
+    }
     @Override
     public String toString() {
         String s="";

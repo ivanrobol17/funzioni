@@ -11,7 +11,7 @@ class Main {
     String indice= "inserire l'indice (tra 0 e ", s;
     do {
       System.out.println(
-          "cosa vuoi fare? premi 1 per inserire un nuovo, 2 per la somma, 3 per la sottrazione, 4 per la moltiplicazione, 5 per la divisione, 6 per stamparne uno, 7 per la reciproca, 8 per l'inverti, 9 per dire il tipo della frazione, 10 stampa tutte, se vuoi uscire digita qualsiasi altro numero");
+          "cosa vuoi fare? premi \n1 per inserire un nuovo, \n2 per la somma, \n3 per la sottrazione, \n4 per la moltiplicazione, \n5 per la divisione, \n6 per stamparne uno, \n7 per la reciproca, \n8 per l'inverti, \n9 per dire il tipo della frazione, \n10 stampa tutte, \nse vuoi uscire digita qualsiasi altro numero");
       scelta = sc.nextInt();
       switch (scelta) {
         case 1:

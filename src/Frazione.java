@@ -27,6 +27,31 @@ public class Frazione {
         }
         return s;
     }
+    public String inserimento(String data) {
+        int pos = data.indexOf("/");
+        String[] tmp=data.split(data, pos);
+        String s = "";
+        int n =Integer.parseInt(tmp[0]);
+        int d =Integer.parseInt(tmp[1]);
+        if (n == 0) {
+            if (d == 0) {
+                s += "LA FRAZIONE NON E' CALCOLABILE e per questo non verrà aggiunta nella memoria";
+            } else {
+                s += "LA FRAZIONE E' PARI A 0 e per questo non verrà aggiunta nella memoria";
+            }
+        } else if (d == 0) {
+            s += "LA FRAZIONE E' I M P O S S I B I L E e per questo non verrà aggiunta nella memoria";
+        } else {
+            if(d<0){
+                n*=-1;
+                d*=-1;
+            }
+            this.n = n;
+            this.d = d;
+            semplifica();
+        }
+        return s;
+    }
 
     private int mcd(int a, int b) {
         if (b == 0) {
