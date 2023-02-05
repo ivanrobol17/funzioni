@@ -6,6 +6,18 @@ public class Frazione {
 
     }
 
+    public String inserimento(int n) {
+        String s = "";
+        if (n == 0) {
+            s += "LA FRAZIONE E' PARI A 0 e per questo non verrà aggiunta nella memoria";
+        } else {
+            this.n = n;
+            this.d = 1;
+            semplifica();
+        }
+        return s;
+    }
+
     public String inserimento(int n, int d) {
         String s = "";
         if (n == 0) {
@@ -17,9 +29,9 @@ public class Frazione {
         } else if (d == 0) {
             s += "LA FRAZIONE E' I M P O S S I B I L E e per questo non verrà aggiunta nella memoria";
         } else {
-            if(d<0){
-                n*=-1;
-                d*=-1;
+            if (d < 0) {
+                n *= -1;
+                d *= -1;
             }
             this.n = n;
             this.d = d;
@@ -27,12 +39,13 @@ public class Frazione {
         }
         return s;
     }
+
     public String inserimento(String data) {
         int pos = data.indexOf("/");
-        String[] tmp=data.split(data, pos);
+        String[] tmp = data.split(data, pos);
         String s = "";
-        int n =Integer.parseInt(tmp[0]);
-        int d =Integer.parseInt(tmp[1]);
+        int n = Integer.parseInt(tmp[0]);
+        int d = Integer.parseInt(tmp[1]);
         if (n == 0) {
             if (d == 0) {
                 s += "LA FRAZIONE NON E' CALCOLABILE e per questo non verrà aggiunta nella memoria";
@@ -42,9 +55,9 @@ public class Frazione {
         } else if (d == 0) {
             s += "LA FRAZIONE E' I M P O S S I B I L E e per questo non verrà aggiunta nella memoria";
         } else {
-            if(d<0){
-                n*=-1;
-                d*=-1;
+            if (d < 0) {
+                n *= -1;
+                d *= -1;
             }
             this.n = n;
             this.d = d;
@@ -74,16 +87,16 @@ public class Frazione {
     }
 
     public Frazione somma(Frazione f) {
-        int dCom = d*f.getD();
-        int nfin = n*f.getD()+f.getN()*d;
+        int dCom = d * f.getD();
+        int nfin = n * f.getD() + f.getN() * d;
         Frazione ris = new Frazione();
         ris.inserimento(nfin, dCom);
         return ris;
     }
 
     public Frazione sottrazione(Frazione f) {
-        int dCom = d*f.getD();
-        int nfin = n*f.getD()-f.getN()*d;
+        int dCom = d * f.getD();
+        int nfin = n * f.getD() - f.getN() * d;
         Frazione ris = new Frazione();
         ris.inserimento(nfin, dCom);
         return ris;
@@ -111,27 +124,27 @@ public class Frazione {
         d /= tmp;
     }
 
-    public Frazione reciproca(){
+    public Frazione reciproca() {
         Frazione ris = new Frazione();
         ris.inserimento(d, n);
         return ris;
     }
 
-    public void inverti(){
-        int tmp=n;
-        n=d;
-        d=tmp;
+    public void inverti() {
+        int tmp = n;
+        n = d;
+        d = tmp;
     }
 
     @Override
     public String toString() {
         double ris;
         String s;
-        if(d!=1){
-            ris=(double)n/d;
-            s = n + "/" + d+" = "+ris;
-        }else{
-            s = n+"";
+        if (d != 1) {
+            ris = (double) n / d;
+            s = n + "/" + d + " = " + ris;
+        } else {
+            s = n + "";
         }
         return s;
     }

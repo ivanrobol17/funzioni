@@ -14,11 +14,23 @@ public class Frazioni {
     public String addFrazione(Frazione fra){
         return addFrazione(fra.getN(), fra.getD());
     }
+    public String addFrazione(int n){
+        Frazione tmp = new Frazione();
+        String s=tmp.inserimento(n);
+        if(s.length()==0){
+            f.add(tmp);
+        }else{
+            s+="\n";
+        }
+        return s;
+    }
     public String addFrazione(int n, int d){
         Frazione tmp = new Frazione();
         String s=tmp.inserimento(n, d);
         if(s.length()==0){
             f.add(tmp);
+        }else{
+            s+="\n";
         }
         return s;
     }
@@ -27,6 +39,8 @@ public class Frazioni {
         String s=tmp.inserimento(data);
         if(s.length()==0){
             f.add(tmp);
+        }else{
+            s+="\n";
         }
         return s;
     }
