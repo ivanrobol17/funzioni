@@ -29,15 +29,17 @@ public class Frazione {
         } else if (d == 0) {
             s += "LA FRAZIONE E' I M P O S S I B I L E e per questo non verrà aggiunta nella memoria";
         } else {
-            if (d < 0) {
-                n *= -1;
-                d *= -1;
-            }
-            this.n = n;
-            this.d = d;
+            this.n=n;
+            this.d=d;
             semplifica();
         }
         return s;
+    }
+    private void controlloZeri(){
+        if (d < 0) {
+            n *= -1;
+            d *= -1;
+        }
     }
 
     public String inserimento(String data) {
@@ -55,10 +57,6 @@ public class Frazione {
         } else if (d == 0) {
             s += "LA FRAZIONE E' I M P O S S I B I L E e per questo non verrà aggiunta nella memoria";
         } else {
-            if (d < 0) {
-                n *= -1;
-                d *= -1;
-            }
             this.n = n;
             this.d = d;
             semplifica();
@@ -122,6 +120,7 @@ public class Frazione {
         int tmp = mcd(n, d);
         n /= tmp;
         d /= tmp;
+        controlloZeri();
     }
 
     public Frazione reciproca() {
