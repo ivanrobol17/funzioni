@@ -43,8 +43,7 @@ public class Frazione {
     }
 
     public String inserimento(String data) {
-        int pos = data.indexOf("/");
-        String[] tmp = data.split(data, pos);
+        String[] tmp = data.split("/");
         String s = "";
         int n = Integer.parseInt(tmp[0]);
         int d = Integer.parseInt(tmp[1]);

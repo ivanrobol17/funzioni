@@ -16,7 +16,7 @@ class Main {
           System.out.print(f.addFrazione(n, d));
     do {
       System.out.println(
-          "cosa vuoi fare? premi \n1 per inserire un nuovo, \n2 per la somma, \n3 per la sottrazione, \n4 per la moltiplicazione, \n5 per la divisione, \n6 per stamparne uno, \n7 per la reciproca, \n8 per l'inverti, \n9 per dire il tipo della frazione, \n10 stampa tutte, \nse vuoi uscire digita qualsiasi altro numero");
+          "cosa vuoi fare? premi \n\t1 per inserire un nuovo, \n\t2 per la somma, \n\t3 per la sottrazione, \n\t4 per la moltiplicazione, \n\t5 per la divisione, \n\t6 per stamparne uno, \n\t7 per la reciproca, \n\t8 per l'inverti, \n\t9 per dire il tipo della frazione, \n\t10 stampa tutte, \n\tse vuoi uscire digita qualsiasi altro numero");
       scelta = sc.nextInt();
       switch (scelta) {
         case 1:
